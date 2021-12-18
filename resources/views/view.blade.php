@@ -32,16 +32,16 @@
                 <td>{{ $song->singer }}</td>
                 <td>{{ $song->album }}</td>
                 <td>{{ $song->country }}</td>
-                {{-- <td>
-                    <a href="{{route('getBookById', ['id'=>$book->id])}}"><button type="submit" class="btn btn-success">Edit</button></a>
-                    <form action="{{route('delete', ['id'=>$book->id])}}" method="post">
+                <td>
+                    <a href="{{route('getSongById', ['id'=>$song->id])}}"><button type="submit" class="btn btn-success">Edit</button></a>
+                    <form action="{{route('delete', ['id'=>$song->id])}}" method="post">
                         @csrf
                         @method('delete')
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                 </td>
 
-                </tr> --}}
+                </tr>
             @endforeach
         </tbody>
       </table>

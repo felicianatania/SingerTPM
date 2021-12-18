@@ -31,3 +31,10 @@ Route::get('/create', [SongController::class,'getCreatePage'])->name('getCreateP
 Route::post('/create-song', [SongController::class, 'createSong'])->name('createSong');
 
 Route::get('/get-songs', [SongController::class, 'getSongs'])->name('getSongs');
+
+Route::get('/update-song/{id}', [SongController::class, 'getSongById'])->name('getSongById');
+
+Route::patch('/update-song/{id}', [SongController::class, 'updateSong'])->name('updateSong');
+
+Route::delete('/delete-song/{id}', [SongController::class, 'deleteSong'])->name('delete');
+

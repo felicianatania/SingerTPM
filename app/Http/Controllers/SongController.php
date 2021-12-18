@@ -29,4 +29,29 @@ class SongController extends Controller
         //$book = DB::table('books')->get(); //yg 'books' itu nama table
         return view('view', ['songs' => $songs]); //yg merah 'songs' itu nama variabel
     }
+
+    public function getSongById($id){
+        $song = Song::find($id);
+        return view('update', ['song' => $song]);
+    }
+
+    public function updateSong(Request $request, $id){
+        $song = Song::find($id);
+
+        $song -> update([
+            'title' => $request->title,
+            'singer' => $request->singer,
+            'album' => $request->album,
+            'country' => $request->country,
+            'release' => $request->release,
+            'price' => $request->price,
+        ]);
+
+        return redirect(route('getSongs'));
+    }
+
+    public function deleteSong($id){
+        Song::destroy($id);
+        return redirect(route('getSongs'));
+    }
 }
