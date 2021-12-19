@@ -45,5 +45,11 @@
             @endforeach
         </tbody>
       </table>
+
+      {{-- <form action="{{route('getCreatePage')}}" method="get">
+        <button type="submit" class="btn btn-success">Create Song</button>
+      </form> --}}
+      <a href="{{route('getCreatePage')}}"><button type="submit" class="btn btn-success">Input Song</button></a>
+      {{-- <button type="button" class="btn btn-success" onclick="window.location='{{ route('createSong') }}'">Create Song</button> --}}
 </body>
 </html>

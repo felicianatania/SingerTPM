@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SongRequest;
 use App\Models\Song;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,12 @@ class SongController extends Controller
         return view('create');
     }
 
-    public function createSong(Request $request){
+    public function createSong(SongRequest $request){
+         // $request->validate([
+        //     'title' => 'required',
+        //     'price' => 'required|numeric',
+        // ]); //kurang baik sebenernya, harus copy lagi ke function lagi misalnya di update
+
         Song::create([
             'title' => $request->title, //ini dia ambil $request->sesuai name di input html VIEW, 'title' brt dia bakal masukin ke atribut title sesuai di model
             'singer' => $request->singer,
@@ -21,7 +27,7 @@ class SongController extends Controller
             'price' => $request->price,
         ]);
 
-        return redirect(route('getCreatePage'));
+        return redirect(route('getSongs'));
     }
 
     public function getSongs(){
@@ -35,7 +41,7 @@ class SongController extends Controller
         return view('update', ['song' => $song]);
     }
 
-    public function updateSong(Request $request, $id){
+    public function updateSong(SongRequest $request, $id){
         $song = Song::find($id);
 
         $song -> update([

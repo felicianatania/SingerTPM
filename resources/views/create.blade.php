@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('content')
-    <h1>Create Song Form</h1>
+    <h1>Input Song Form</h1>
     <form action="{{ route('createSong') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
@@ -27,9 +27,9 @@
             <label for="price" class="form-label">Price</label>
             <input name="price" type="numeric" class="form-control" id="formGroupExampleInput" placeholder="Input price here">
         </div>
-        {{-- @error('price')
+        @error('price')
             <div class="alert alert-danger">{{ $message }}</div>
-        @enderror --}}
+        @enderror
         <button type="submit" class="btn btn-success">Insert</button>
     </form>
 @endsection
