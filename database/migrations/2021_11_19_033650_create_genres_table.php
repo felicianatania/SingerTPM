@@ -11,22 +11,22 @@ class CreateGenresTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('genres', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->timestamps();
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::create('genres', function (Blueprint $table) {
+    //         $table->id();
+    //         $table->string('name');
+    //         $table->timestamps();
+    //     });
+    // }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('genres');
-    }
+    // /**
+    //  * Reverse the migrations.
+    //  *
+    //  * @return void
+    //  */
+    // public function down()
+    // {
+    //     Schema::dropIfExists('genres');
+    // }
 }

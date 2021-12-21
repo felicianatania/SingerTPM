@@ -20,6 +20,15 @@
             <input name="country" type="text" class="form-control" id="formGroupExampleInput" placeholder="Input country here">
         </div>
         <div class="mb-3">
+            <label for="genreId" class="form-label">Genre</label>
+            <select name="genreId" class="form-select" aria-label="Default select example">
+                <option selected>Select Genre</option>
+                <option value="1">Pop</option>
+                <option value="2">Rock</option>
+                <option value="3">Jazz</option>
+              </select>
+        </div>
+        <div class="mb-3">
             <label for="release" class="form-label">Release</label>
             <input name="release" type="date" class="form-control" id="formGroupExampleInput" placeholder="Input Date">
         </div>

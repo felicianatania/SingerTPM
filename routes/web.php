@@ -38,3 +38,7 @@ Route::patch('/update-song/{id}', [SongController::class, 'updateSong'])->name('
 
 Route::delete('/delete-song/{id}', [SongController::class, 'deleteSong'])->name('delete');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
