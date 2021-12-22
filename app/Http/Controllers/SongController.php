@@ -19,12 +19,13 @@ class SongController extends Controller
         // ]); //kurang baik sebenernya, harus copy lagi ke function lagi misalnya di update
 
         //return $request->file('image')->store('post-image');
-
+        $image = $request->file('image')->store('post-image');
+        //dd ($image);
         Song::create([
             'title' => $request->title, //ini dia ambil $request->sesuai name di input html VIEW, 'title' brt dia bakal masukin ke atribut title sesuai di model
             'singer' => $request->singer,
             'album' => $request->album,
-            'image' => $request->file('image')->store('post-image'),
+            'image' => $image,
             'country' => $request->country,
             'release' => $request->release,
             'price' => $request->price,
@@ -67,7 +68,8 @@ class SongController extends Controller
 
     public function search(){
        $search_text = $_GET['query'];
-       $songs = Song::where('title', 'LIKE', '%'.$search_text.'%')->get();
+       $songs = Song::where('title', 'LIKE', '%'.$search_text.'%')->orwhere('singer', 'LIKE', '%'.$search_text.'%')
+       ->orwhere('album', 'LIKE', '%'.$search_text.'%')->orwhere('country', 'LIKE', '%'.$search_text.'%')->get();
 
        return view('songs.search', compact('songs'));
     }

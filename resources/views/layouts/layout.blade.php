@@ -40,7 +40,7 @@
               </li>
             </ul>
             <form class="d-flex" type="get" action="{{url('/search')}}">
-              <input class="form-control me-2" name="query" type="search" placeholder="Search for songs" aria-label="Search">
+              <input class="form-control me-2" name="query" type="search" placeholder="Search songs" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
           </div>

@@ -21,7 +21,7 @@
                 <td>{{ $song->title }}</td>
                 <td>{{ $song->singer }}</td>
                 <td>{{ $song->album }}</td>
-                <td><img src="{{asset('storage/'.$song->image)}}" alt="Album Cover" class="img fluid mt-3"></td>
+                <td><img src="{{asset('storage/'.$song->image)}}" alt="Album Cover ({{ $song->album }})" class="img fluid mt-3"></td>
                 <td>{{ $song->country }}</td>
                 <td>
                     <a href="{{route('getSongById', ['id'=>$song->id])}}"><button type="submit" class="btn btn-success">Edit</button></a>

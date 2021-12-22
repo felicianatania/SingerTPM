@@ -27,7 +27,7 @@ class SongRequest extends FormRequest
             'title' => 'required',
             'singer' => 'required',
             'album' => 'required',
-            'image' => 'image|file',
+            'image' => 'required|image|file',
             'country' => 'required',
             'price' => 'required|numeric',
         ];
