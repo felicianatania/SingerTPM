@@ -26,6 +26,10 @@
             <input name="album" type="text" class="form-control" id="formGroupExampleInput" value="{{$song->album}}" placeholder="Input album here">
         </div>
         <div class="mb-3">
+            <label for="image" class="form-label">Album Cover</label>
+            <input class="form-control" type="file" id="image" name='image' value="{{$song->image}}">
+        </div>
+        <div class="mb-3">
             <label for="country" class="form-label">Country</label>
             <input name="country" type="text" class="form-control" id="formGroupExampleInput" value="{{$song->country}}" placeholder="Input country here">
         </div>

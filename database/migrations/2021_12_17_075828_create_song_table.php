@@ -18,6 +18,7 @@ class CreateSongTable extends Migration
             $table->string('title')->unique();
             $table->string('singer');
             $table->string('album');
+            $table->string('image')->nullable();
             $table->string('country');
             $table->date('release')->nullable();
             $table->integer('price');

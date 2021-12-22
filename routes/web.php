@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\SongController;
+use App\Http\Controllers\UploadGambarController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,6 +40,7 @@ Route::patch('/update-song/{id}', [SongController::class, 'updateSong'])->name('
 
 Route::delete('/delete-song/{id}', [SongController::class, 'deleteSong'])->name('delete');
 
+Route::get('/search', [SongController::class, 'search'])->name('searchSong');
 
 Auth::routes();
 
