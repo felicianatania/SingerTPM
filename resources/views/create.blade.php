@@ -17,7 +17,7 @@
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Album Cover</label>
-            <input class="form-control" type="file" id="image" name='image'>
+            <input class="form-control" type="file" id="image" name="image">
         </div>
         <div class="mb-3">
             <label for="country" class="form-label">Country</label>

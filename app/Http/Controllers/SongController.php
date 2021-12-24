@@ -19,8 +19,10 @@ class SongController extends Controller
         // ]); //kurang baik sebenernya, harus copy lagi ke function lagi misalnya di update
 
         //return $request->file('image')->store('post-image');
-        $image = $request->file('image')->store('post-image');
         //dd ($image);
+        $file_name = $request->image->getClientOriginalName();
+        $image = $request->file('image')->storeAs('post-image', $file_name);
+
         Song::create([
             'title' => $request->title, //ini dia ambil $request->sesuai name di input html VIEW, 'title' brt dia bakal masukin ke atribut title sesuai di model
             'singer' => $request->singer,
